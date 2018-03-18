@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 mrt 2018 om 19:17
+-- Gegenereerd op: 18 mrt 2018 om 20:41
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.10
 
@@ -12,9 +12,6 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-DROP DATABASE examen;
-CREATE DATABASE examen;
-USE examen;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -102,7 +99,7 @@ CREATE TABLE `product` (
   `product_id` int(11) UNSIGNED NOT NULL,
   `fabriek_id` int(11) NOT NULL,
   `product` varchar(50) NOT NULL,
-  `prijs` int(11) UNSIGNED NOT NULL
+  `prijs` float(11,2) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -110,15 +107,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `fabriek_id`, `product`, `prijs`) VALUES
-(1, 3, 'Chocolade', 21),
-(2, 4, 'Dikke Kaas', 12),
-(3, 3, 'Frikandel', 1221),
-(4, 4, 'Gerookte Hond', 321321),
-(5, 6, 'Flikkertaart', 1),
-(6, 5, 'Frans Bauer', 12),
-(10, 6, 'Wesley', 4444),
-(11, 4, 'ww', 1),
-(12, 6, 'Geitenkaas', 323);
+(1, 3, 'Chocolade', 21.00),
+(2, 4, 'Dikke Kaas', 12.00),
+(3, 3, 'Frikandel', 1221.00),
+(4, 4, 'Gerookte Hond', 9999.99),
+(5, 6, 'Flikkertaart', 1.00),
+(6, 5, 'Frans Bauer', 12.03),
+(11, 4, 'ww', 12.02),
+(12, 6, 'Geitenkaas', 323.00),
+(13, 4, 'Youssef', 1221.99);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -177,7 +174,7 @@ ALTER TABLE `opslag_product`
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `product_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -187,14 +184,14 @@ ALTER TABLE `product`
 -- Beperkingen voor tabel `opslag_product`
 --
 ALTER TABLE `opslag_product`
-  ADD CONSTRAINT `opslag_product` FOREIGN KEY (`opslag_id`) REFERENCES `opslag` (`opslag_id`) ON UPDATE CASCADE ON DELETE CASCADE,
-  ADD CONSTRAINT `opslag_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `opslag_product` FOREIGN KEY (`opslag_id`) REFERENCES `opslag` (`opslag_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `opslag_product_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Beperkingen voor tabel `product`
 --
 ALTER TABLE `product`
-  ADD CONSTRAINT `fabriekproduct` FOREIGN KEY (`fabriek_id`) REFERENCES `fabriek` (`fabriek_id`) ON UPDATE CASCADE ON DELETE CASCADE;
+  ADD CONSTRAINT `fabriekproduct` FOREIGN KEY (`fabriek_id`) REFERENCES `fabriek` (`fabriek_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 // initialization
 // f.e. DB connection, session, config, language files
 define('APP_PATH', __DIR__);
-define('APP_BASE_URL', 'http://localhost/FlikkerExamen/flikker');
+define('APP_BASE_URL', 'http://localhost/FlikkerExamen');
 define('APP_LANG', 'nl');
 
 var_dump(APP_BASE_URL);

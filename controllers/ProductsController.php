@@ -34,7 +34,7 @@ public function addForm(){
 
 public function addProduct(){
   $product = filter_input(INPUT_POST, 'product' , FILTER_SANITIZE_STRING);
-  $prijs = filter_input(INPUT_POST, 'prijs' , FILTER_SANITIZE_NUMBER_FLOAT);
+  $prijs = filter_input(INPUT_POST, 'prijs' , FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
   $fabriek = filter_input(INPUT_POST, 'fabriek' , FILTER_SANITIZE_STRING);;
   $this->ProductsModel->addProduct($product, $prijs, $fabriek);
   $this->internalRedirect('products', 'overview');
@@ -54,7 +54,7 @@ public function update(){
 public function updateProduct(){
   $id = filter_input(INPUT_POST, 'id' , FILTER_SANITIZE_NUMBER_INT);
   $product = filter_input(INPUT_POST, 'product' , FILTER_SANITIZE_STRING);
-  $prijs = filter_input(INPUT_POST, 'prijs' , FILTER_SANITIZE_NUMBER_FLOAT);
+  $prijs = filter_input(INPUT_POST, 'prijs' , FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
   $this->ProductsModel->update($id, $product, $prijs);
   $this->internalRedirect('products', 'overview');
 
