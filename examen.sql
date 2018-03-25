@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 18 mrt 2018 om 20:41
+-- Gegenereerd op: 25 mrt 2018 om 16:20
 -- Serverversie: 10.1.28-MariaDB
 -- PHP-versie: 7.1.10
 
@@ -24,6 +24,26 @@ USE examen;
 --
 -- Database: `examen`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `accounts`
+--
+
+CREATE TABLE `accounts` (
+  `account_ID` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `accounts`
+--
+
+INSERT INTO `accounts` (`account_ID`, `email`, `password`) VALUES
+(2, 'koppers@dialogic.nl', '$2y$10$JS.7ZRdl0yVa.XGrAeSQteGlQJ2CtFUTlBqc5Lc2jNglonY7CWIHq'),
+(3, 'test@test.nl', '$2y$10$CRdW3bYDTDThQ33RXdDLuuOngvy5P/ruDCtYUzT1sGRnXJWlxFF6C');
 
 -- --------------------------------------------------------
 
@@ -116,13 +136,19 @@ INSERT INTO `product` (`product_id`, `fabriek_id`, `product`, `prijs`) VALUES
 (4, 4, 'Gerookte Hond', 9999.99),
 (5, 6, 'Flikkertaart', 1.00),
 (6, 5, 'Frans Bauer', 12.03),
-(11, 4, 'ww', 12.02),
 (12, 6, 'Geitenkaas', 323.00),
-(13, 4, 'Youssef', 1221.99);
+(13, 4, 'Youssef', 1221.99),
+(14, 4, 'Aap', 41.49);
 
 --
 -- Indexen voor geëxporteerde tabellen
 --
+
+--
+-- Indexen voor tabel `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`account_ID`);
 
 --
 -- Indexen voor tabel `fabriek`
@@ -156,6 +182,12 @@ ALTER TABLE `product`
 --
 
 --
+-- AUTO_INCREMENT voor een tabel `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `account_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT voor een tabel `fabriek`
 --
 ALTER TABLE `fabriek`
@@ -177,7 +209,7 @@ ALTER TABLE `opslag_product`
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `product_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

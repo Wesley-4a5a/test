@@ -31,6 +31,16 @@ class AppControllerAbstract
     $this->loadView('theme/footer');
   }
 
+  function loginCheck(){
+    if($_SESSION['login'] === true){
+      return;
+    }
+    else{
+		  $this->internalRedirect('pages', 'error');
+      return;
+    }
+  }
+
 	function redirect($url)
 	{
 		header('Location: '. $url);

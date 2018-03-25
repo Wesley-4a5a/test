@@ -20,8 +20,6 @@ class FabriekenModel extends ConnectionModel
 		$stmt = $conn->prepare("DELETE FROM fabriek WHERE fabriek_id=:id");
 		$stmt->bindParam(':id', $id);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 	public function addFabriek($naam)
@@ -30,8 +28,6 @@ class FabriekenModel extends ConnectionModel
 		$stmt = $conn->prepare("INSERT INTO fabriek (naam) VALUES (:naam)");
 		$stmt->bindParam(':naam', $naam);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 	public function update($id, $fabriek)
@@ -41,8 +37,6 @@ class FabriekenModel extends ConnectionModel
 		$stmt->bindParam(':id', $id);
 		$stmt->bindParam(':naam', $fabriek);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 }

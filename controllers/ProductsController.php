@@ -15,6 +15,7 @@ class ProductsController extends AppControllerAbstract{
   private $ProductModel;
 
   public function __construct(){
+    $this->loginCheck();
     require_once(APP_PATH . '/models/ProductsModel.php');
     $this->ProductsModel = new ProductsModel();
   }
@@ -61,7 +62,7 @@ public function updateProduct(){
 }
 
 public function delete(){
-  $id = $_GET['id'];
+  $id = filter_input(INPUT_GET, 'id' , FILTER_SANITIZE_NUMBER_INT);
   $this->ProductsModel->delete($id);
   $this->internalRedirect('products', 'overview');
 

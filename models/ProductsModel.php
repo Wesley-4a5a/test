@@ -39,8 +39,6 @@ class ProductsModel extends ConnectionModel
 		$stmt = $conn->prepare("DELETE FROM Product WHERE product_id=:id");
 		$stmt->bindParam(':id', $id);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 	public function addProduct($product, $prijs, $fabriek)
@@ -51,8 +49,6 @@ class ProductsModel extends ConnectionModel
 		$stmt->bindParam(':product', $product);
 		$stmt->bindParam(':prijs', $prijs);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 	public function update($id, $product, $prijs)
@@ -63,8 +59,6 @@ class ProductsModel extends ConnectionModel
 		$stmt->bindParam(':product', $product);
 		$stmt->bindParam(':prijs', $prijs);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 }

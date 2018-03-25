@@ -20,8 +20,6 @@ class VoorraadModel extends ConnectionModel
 		$stmt = $conn->prepare("DELETE FROM Product WHERE id=:id");
 		$stmt->bindParam(':id', $id);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 	public function addProduct($product, $voorraad, $prijs, $fabriek)
@@ -33,8 +31,6 @@ class VoorraadModel extends ConnectionModel
 		$stmt->bindParam(':voorraad', $voorraad);
 		$stmt->bindParam(':prijs', $prijs);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 	public function update($id, $product, $voorraad, $prijs)
@@ -46,8 +42,6 @@ class VoorraadModel extends ConnectionModel
 		// $stmt->bindParam(':voorraad', $voorraad);
 		// $stmt->bindParam(':prijs', $prijs);
 		$stmt->execute();
-		$affectedRows = $stmt->rowCount();
-		return $affectedRows;
 	}
 
 }

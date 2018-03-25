@@ -1,5 +1,11 @@
 <?php
+session_start();
+if(!ISSET($_SESSION['login'])){
+	$_SESSION['login'] = false;
+	$_SESSION['email'] = null;
+}
 
+var_dump($_SESSION);
 // initialization
 // f.e. DB connection, session, config, language files
 define('APP_PATH', __DIR__);
