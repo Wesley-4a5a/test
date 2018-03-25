@@ -17,6 +17,6 @@
     Opslag Locatie: <?php echo $row->locatie ?><br />
     Voorraad: <?php echo $row->voorraad ?><br /><br />
   <?php endforeach; ?>
-  <a href="index.php?controller=products&action=overview"><button>Terug</button></a>
+  <a href="<?= APP_BASE_URL ?>/products/overview"><button>Terug</button></a>
   </body>
 </html>

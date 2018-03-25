@@ -16,6 +16,7 @@ var_dump(APP_BASE_URL);
 
 $controller = filter_input(INPUT_GET, 'controller' , FILTER_SANITIZE_URL);
 $action = filter_input(INPUT_GET, 'action' , FILTER_SANITIZE_URL);
+$parameter = null;
 
 $requestString = str_replace($_SERVER['SCRIPT_NAME'], '', $_SERVER['PHP_SELF']);
 
@@ -26,6 +27,9 @@ if(ISSET($requestVars[1]) && $controller === NULL) {
 }
 if(ISSET($requestVars[2]) && $action === NULL) {
 	$action = filter_var($requestVars[2]);
+}
+if(ISSET($requestVars[3]) && $parameter === NULL) {
+	$parameter = filter_var($requestVars[3]);
 }
 
 var_dump($requestVars);
@@ -62,7 +66,7 @@ else
 
 if(method_exists($controllerObject, $action))
 {
-	$controllerObject->{$action}();
+	$controllerObject->{$action}($parameter);
 }
 else
 {

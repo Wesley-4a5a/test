@@ -29,11 +29,11 @@
 				foreach ($product as $row): ?>
 				<tr>
 					<td><?= $row->product_id ?></td>
-					<td><a href='<?= APP_BASE_URL ?>/products/productDetails/?id=<?= $row->product_id ?>'><?= $row->product ?></a></td>
+					<td><a href='<?= APP_BASE_URL ?>/products/productDetails/<?= $row->product_id ?>'><?= $row->product ?></a></td>
 					<td><?= $row->prijs ?></td>
 					<td><?= $row->naam ?></td>
 					<td><a href='<?= APP_BASE_URL ?>/products/update/?id=<?= $row->product_id ?>&name=<?= $row->product ?>&prijs=<?= $row->prijs ?>'>Verander mij!</a></td>
-					<td><a href='<?= APP_BASE_URL ?>/products/delete/?id=<?= $row->product_id ?>'>Hang mij!</a></td>
+					<td><a href='<?= APP_BASE_URL ?>/products/delete/<?= $row->product_id ?>'>Hang mij!</a></td>
 				</tr>
 				<?php endforeach; ?>
 

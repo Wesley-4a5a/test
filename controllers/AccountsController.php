@@ -56,10 +56,9 @@ class AccountsController extends AppControllerAbstract{
 
   }
 
-  public function delete(){
-    $id = filter_input(INPUT_GET, 'id' , FILTER_SANITIZE_NUMBER_INT);
+  public function delete($id){
     $this->AccountsModel->delete($id);
-    $this->internalRedirect('accounts', 'gebruikers');  
+    $this->internalRedirect('accounts', 'gebruikers');
   }
 
 

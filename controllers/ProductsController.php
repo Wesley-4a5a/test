@@ -41,8 +41,7 @@ public function addProduct(){
   $this->internalRedirect('products', 'overview');
 }
 
-public function productDetails(){
-  $id = filter_input(INPUT_GET, 'id' , FILTER_SANITIZE_NUMBER_INT);
+public function productDetails($id){
   $product = $this->ProductsModel->getOne($id);
   $voorraad = $this->ProductsModel->getVoorraad($id);
   $this->loadCompleteView('details/details', ['product' => $product, 'voorraad' => $voorraad]);
@@ -61,8 +60,7 @@ public function updateProduct(){
 
 }
 
-public function delete(){
-  $id = filter_input(INPUT_GET, 'id' , FILTER_SANITIZE_NUMBER_INT);
+public function delete($id){
   $this->ProductsModel->delete($id);
   $this->internalRedirect('products', 'overview');
 

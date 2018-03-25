@@ -25,7 +25,7 @@
 					<td><?= $row->account_id ?></td>
 					<td><?= $row->email ?></td>
 					<td><a href='#'>Verander mij!</a></td>
-					<td><a href='<?= APP_BASE_URL ?>/accounts/delete/?id=<?= $row->account_id ?>'>Hang mij!</a></td>
+					<td><a href='<?= APP_BASE_URL ?>/accounts/delete/<?= $row->account_id ?>'>Hang mij!</a></td>
 				</tr>
 				<?php endforeach; ?>
 
