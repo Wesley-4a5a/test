@@ -43,3 +43,5 @@
     <?php } ?>
   </ul>
   </div>
+
+<div class="col-10 content">

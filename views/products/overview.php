@@ -1,5 +1,4 @@
 
-<div class="col-10 menu">
   <div class="col-1">
 
   </div>
@@ -32,7 +31,7 @@
 					<td><a href='<?= APP_BASE_URL ?>/products/productDetails/<?= $row->product_id ?>'><?= $row->product ?></a></td>
 					<td><?= $row->prijs ?></td>
 					<td><?= $row->naam ?></td>
-					<td><a href='<?= APP_BASE_URL ?>/products/update/?id=<?= $row->product_id ?>&name=<?= $row->product ?>&prijs=<?= $row->prijs ?>'>Verander mij!</a></td>
+					<td><a href='<?= APP_BASE_URL ?>/products/update/<?= $row->product_id ?>'>Verander mij!</a></td>
 					<td><a href='<?= APP_BASE_URL ?>/products/delete/<?= $row->product_id ?>'>Hang mij!</a></td>
 				</tr>
 				<?php endforeach; ?>
@@ -44,4 +43,3 @@
   <div class="col-1">
 
   </div>
-</div>

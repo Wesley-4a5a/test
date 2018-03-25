@@ -47,8 +47,9 @@ public function productDetails($id){
   $this->loadCompleteView('details/details', ['product' => $product, 'voorraad' => $voorraad]);
 }
 
-public function update(){
-  $this->loadCompleteView('products/updateForm');
+public function update($id){
+  $product = $this->ProductsModel->getOne($id);
+  $this->loadCompleteView('products/updateForm', ['product' => $product]);
 }
 
 public function updateProduct(){

@@ -1,4 +1,4 @@
-
+</div>
 
 <div class="col-12 footer">
 Tyfus disclaimer zooi 1990

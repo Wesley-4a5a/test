@@ -1,5 +1,4 @@
 
-<div class="col-10 menu">
   <div class="col-1">
 
   </div>
@@ -36,4 +35,3 @@
   <div class="col-1">
 
   </div>
-</div>

@@ -20,36 +20,47 @@ body{
 .col-12 {width: 100%;}
 
 [class*="col-"] {
-float: left;
-padding: 15px;
-border: 1px solid red;
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
 }
 
 .header{
-height: 10em;
+  height: 10em;
 }
+
 .menu{
-height:60em;
-text-decoration:none;
+  height:60em;
+  text-decoration:none;
 }
+
+.content{
+  height:60em;
+}
+
+.contentImage{
+  width: 50%;
+}
+
 .menu ul li{
 list-style-type: none;
 }
+
 .footer{
-position:relative;
-bottom:0;
-height: 10em;
-text-align: center;
+  position:relative;
+  bottom:0;
+  height: 10em;
+  text-align: center;
 }
 
 .logo{
-width: 150px;
-height: 130px;
+  width: 150px;
+  height: 130px;
 }
 
 .login{
-float:right;
-width:10%;
+  float:right;
+  width:10%;
 }
 
 @media (max-width: 760px) {
